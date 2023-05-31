@@ -2,16 +2,10 @@ import styled from "styled-components";
 const Home = () => {
   return (
     <Wrapper>
-      Lorem ipsum dolor sit amet, officia excepteur ex fugiat reprehenderit enim
-      labore culpa sint ad nisi Lorem pariatur mollit ex esse exercitation amet.
-      Nisi anim cupidatat excepteur officia. Reprehenderit nostrud nostrud ipsum
-      Lorem est aliquip amet voluptate voluptate dolor minim nulla est proident.
-      Nostrud officia pariatur ut officia. Sit irure elit esse ea nulla sunt ex
-      occaecat reprehenderit commodo officia dolor Lorem duis laboris cupidatat
-      officia voluptate. Culpa proident adipisicing id nulla nisi laboris ex in
-      Lorem sunt duis officia eiusmod. Aliqua reprehenderit commodo ex non
-      excepteur duis sunt velit enim. Voluptate laboris sint cupidatat ullamco
-      ut ea consectetur et est culpa et culpa duis.
+      <Head>
+        <Name>Dillon McQuade</Name>
+        <Title>Full Stack Developer</Title>
+      </Head>
     </Wrapper>
   );
 };
@@ -35,4 +29,21 @@ const Wrapper = styled.article`
       opacity: 1;
     }
   }
+  @media (min-width: 1400px) {
+    min-width: 1000px;
+  }
+  @media (min-width: 1200px) {
+    min-width: 800px;
+  }
+`;
+const Head = styled.div`
+  text-align: center;
+`;
+const Name = styled.h1`
+  font-size: 2em;
+  color: var(--nord7);
+`;
+const Title = styled.h2`
+  font-size: 1.5em;
+  color: var(--nord8);
 `;

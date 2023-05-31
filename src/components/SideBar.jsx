@@ -1,7 +1,9 @@
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import styled from "styled-components";
 import { BsLinkedin, BsGithub } from "react-icons/bs";
 import { AiFillMail } from "react-icons/ai";
+import { ImLocation } from "react-icons/im";
+
 const SideBar = () => {
   return (
     <Wrapper>
@@ -13,25 +15,38 @@ const SideBar = () => {
           />
         </ListItem>
         <ListItem>
-          <StyledLink to="/">Home</StyledLink>
+          <StyledLink to="/">~/Home</StyledLink>
         </ListItem>
         <ListItem>
-          <StyledLink to="/about">About</StyledLink>
+          <StyledLink to="/about">~/About</StyledLink>
         </ListItem>
         <ListItem>
-          <StyledLink to="/projects">Projects</StyledLink>
+          <StyledLink to="/projects">~/Projects</StyledLink>
         </ListItem>
         <ListItem>
-          <StyledLink to="/contact">Contact me</StyledLink>
+          <StyledLink to="/contact">~/Contact</StyledLink>
+        </ListItem>
+        <ListItem>
+          <Location /> Montreal, QC
         </ListItem>
         <Icons>
-          <a href="https://linkedin.com/dillonkmcquade" target="_blank">
+          <a
+            href="https://linkedin.com/dillonkmcquade"
+            target="_blank"
+            aria-label="Link to my linkedin"
+            rel="noreferrer"
+          >
             <LinkedIn />
           </a>
-          <a href="https://www.github.com/dillonkmcquade" target="_blank">
+          <a
+            href="https://www.github.com/dillonkmcquade"
+            target="_blank"
+            aria-label="Link to my github"
+            rel="noreferrer"
+          >
             <GitHub />
           </a>
-          <a href="mailto:dillonkmcquade@gmail.com">
+          <a aria-label="Email me" href="mailto:dillonkmcquade@gmail.com">
             <Mail />
           </a>
         </Icons>
@@ -44,7 +59,7 @@ export default SideBar;
 
 const Wrapper = styled.aside`
   text-align: center;
-  min-width: 25%;
+  min-width: 200px;
   max-width: 400px;
   @media (max-width: 500px) {
     margin: 0 auto;
@@ -66,10 +81,15 @@ const Nav = styled.ul`
   padding: 1em;
 `;
 
-const StyledLink = styled(Link)`
+const StyledLink = styled(NavLink)`
   text-decoration: none;
   &:hover {
     opacity: 0.8;
+    text-decoration: underline;
+  }
+  &.active {
+    color: var(--nord8);
+    text-decoration: underline;
   }
 `;
 
@@ -78,6 +98,7 @@ const ListItem = styled.li`
 `;
 const Icons = styled(ListItem)`
   margin: 1.25em 0;
+  min-width: 150px;
 `;
 const LinkedIn = styled(BsLinkedin)`
   scale: 2;
@@ -103,4 +124,8 @@ const Mail = styled(AiFillMail)`
   &:hover {
     color: var(--nord15);
   }
+`;
+
+const Location = styled(ImLocation)`
+  color: var(--nord14);
 `;
