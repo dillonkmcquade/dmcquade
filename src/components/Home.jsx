@@ -30,6 +30,11 @@ const Home = () => {
           Hi, i'm Dillon. I'm a (soon-to-be)full-stack developer from Montreal,
           Quebec.
         </Section>
+        <Section>
+          I'm a an aspiring software dev, linux enthusiast, and outdoorsman.
+          When i'm not customizing my development tools or tinkering with my
+          config files, I'm usually out hiking, camping, backpacking or biking.
+        </Section>
         <SectionContainer>
           <Section>
             <SubTitle>My stack</SubTitle>
@@ -41,7 +46,7 @@ const Home = () => {
                 <SiNodedotjs color="var(--nord14)" /> Node.js
               </ListItem>
               <ListItem>
-                <SiTypescript color="var(--nord10)" /> Some TypeScript
+                <SiTypescript color="var(--nord10)" /> Some Typescript
               </ListItem>
               <ListItem>
                 <SiReact color="cyan" /> React
@@ -64,7 +69,7 @@ const Home = () => {
             <SubTitle>My dev environment</SubTitle>
             <ul>
               <ListItem>
-                <SiFedora color="var(--nord10)" /> Fedora 38
+                <SiFedora color="var(--nord10)" /> Fedora Workstation 38
               </ListItem>
               <ListItem>
                 <SiNeovim color="green" /> NeoVim (my favorite editor)
@@ -82,6 +87,25 @@ const Home = () => {
             </ul>
           </Section>
         </SectionContainer>
+        <SectionContainer>
+          <Section>
+            <SubTitle>Other Technologies that I occasionally use</SubTitle>
+            <ul>
+              <ListItem>Podman, Toolbx, Docker</ListItem>
+              <ListItem>Virtual-Machine Manager</ListItem>
+            </ul>
+          </Section>
+          <Section>
+            <SubTitle>Things I want to learn</SubTitle>
+            <ul>
+              <ListItem>Typescript</ListItem>
+              <ListItem>Java</ListItem>
+              <ListItem>Go</ListItem>
+              <ListItem>Rust</ListItem>
+              <ListItem>Postgres</ListItem>
+            </ul>
+          </Section>
+        </SectionContainer>
       </Wrapper>
     </IconContext.Provider>
   );
@@ -90,11 +114,10 @@ const Home = () => {
 export default Home;
 
 const Wrapper = styled.article`
-  min-width: calc(75% - 2em);
+  max-width: calc(1000px - 2em);
   background-color: var(--nord3);
   border-radius: 1em;
   margin: 1em;
-  padding: 2em;
   animation: fadeIn ease-in 1s;
   @keyframes fadeIn {
     0% {
@@ -107,7 +130,7 @@ const Wrapper = styled.article`
     }
   }
   @media (min-width: 1400px) {
-    min-width: 1000px;
+    min-width: 900px;
   }
   @media (min-width: 1200px) {
     min-width: 800px;
@@ -139,7 +162,7 @@ const ListItem = styled.li`
 
 const SectionContainer = styled.div`
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   @media (max-width: 900px) {
     flex-direction: column;
   }

@@ -5,6 +5,7 @@ const HeroSection = ({ opacity }) => {
     <Wrapper>
       <Image src="./assets/bitmap.png" alt="artwork" opacity={opacity} />
       <Arrow
+        size="48px"
         onClick={() =>
           window.scroll({
             top: document.documentElement.offsetHeight,
@@ -31,12 +32,11 @@ const Image = styled.img`
   }
 `;
 const Arrow = styled(AiOutlineArrowDown)`
-  scale: 3;
-  color: var(--nord1);
+  color: var(--nord12);
   z-index: 10;
   position: fixed;
   bottom: 10%;
-  right: 50%;
+  right: calc(50% - 48px);
   cursor: pointer;
   border-radius: 50%;
   border: 2px solid var(--nord1);

@@ -5,23 +5,22 @@ import SideBar from "./SideBar";
 import Home from "./Home";
 import HeroSection from "./HeroSection";
 import styled from "styled-components";
+import Projects from "./Projects";
 
 const App = () => {
   const [bannerVisible, setBannerVisible] = useState(false);
   const [opacity, setOpacity] = useState(1);
-  console.log(window.location.pathname);
 
   const handleScroll = () => {
-    if (
-      document.documentElement.scrollTop >
-      document.documentElement.offsetHeight / 2
-    ) {
-      setBannerVisible(false);
-      window.removeEventListener("scroll", handleScroll);
-    }
     setOpacity(1 - document.documentElement.scrollTop / 1500);
   };
 
+  useEffect(() => {
+    if (opacity <= 0) {
+      setBannerVisible(false);
+      window.removeEventListener("scroll", handleScroll);
+    }
+  }, [opacity]);
   useEffect(() => {
     if (window.location.pathname === "/") {
       setBannerVisible(true);
@@ -29,6 +28,12 @@ const App = () => {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+  useEffect(() => {
+    window.scroll({
+      top: 0,
+      behavior: "smooth",
+    });
+  }, [bannerVisible]);
 
   return (
     <Wrapper height={bannerVisible ? "300vh" : "100vh"}>
@@ -41,7 +46,7 @@ const App = () => {
           <SideBar />
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/projects" element={<Home />} />
+            <Route path="/projects" element={<Projects />} />
             <Route path="/contact" element={<Home />} />
             <Route path="*" element={<Home />} />
           </Routes>
@@ -64,7 +69,8 @@ const Content = styled.main`
   align-self: center;
   max-width: 1400px;
   animation: fadeIn ease-in 2s;
-  @media (max-width: 500px) {
+  @media (max-width: 1000px) {
+    align-items: center;
     flex-direction: column;
   }
   @keyframes fadeIn {
@@ -75,19 +81,4 @@ const Content = styled.main`
       opacity: 1;
     }
   }
-`;
-
-const Image = styled.img`
-  height: 1500px;
-  z-index: 1000;
-  opacity: ${(props) => props.opacity};
-  /* animation: fadeOut ease-out 2s;
-  @keyframes fadeOut {
-    0% {
-      opacity: 0;
-    }
-    100% {
-      opacity: 1;
-    }
-  } */
 `;

@@ -15,6 +15,10 @@ const SideBar = () => {
           />
         </ListItem>
         <ListItem>
+          <h1>Dillon McQuade</h1>
+          <h2>Full-Stack web developer</h2>
+        </ListItem>
+        <ListItem>
           <StyledLink to="/">~/About</StyledLink>
         </ListItem>
         <ListItem>
