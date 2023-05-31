@@ -7,8 +7,9 @@ import HeroSection from "./HeroSection";
 import styled from "styled-components";
 
 const App = () => {
-  const [bannerVisible, setBannerVisible] = useState(true);
+  const [bannerVisible, setBannerVisible] = useState(false);
   const [opacity, setOpacity] = useState(1);
+  console.log(window.location.pathname);
 
   const handleScroll = () => {
     if (
@@ -22,6 +23,9 @@ const App = () => {
   };
 
   useEffect(() => {
+    if (window.location.pathname === "/") {
+      setBannerVisible(true);
+    }
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
@@ -37,7 +41,6 @@ const App = () => {
           <SideBar />
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/about" element={<Home />} />
             <Route path="/projects" element={<Home />} />
             <Route path="/contact" element={<Home />} />
             <Route path="*" element={<Home />} />

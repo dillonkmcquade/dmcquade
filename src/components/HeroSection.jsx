@@ -1,9 +1,6 @@
 import { AiOutlineArrowDown } from "react-icons/ai";
 import styled from "styled-components";
-const HeroSection = ({ opacity, setBannerVisible }) => {
-  const scroll = new Promise((resolve) => {
-    resolve();
-  });
+const HeroSection = ({ opacity }) => {
   return (
     <Wrapper>
       <Image src="./assets/bitmap.png" alt="artwork" opacity={opacity} />

@@ -15,10 +15,7 @@ const SideBar = () => {
           />
         </ListItem>
         <ListItem>
-          <StyledLink to="/">~/Home</StyledLink>
-        </ListItem>
-        <ListItem>
-          <StyledLink to="/about">~/About</StyledLink>
+          <StyledLink to="/">~/About</StyledLink>
         </ListItem>
         <ListItem>
           <StyledLink to="/projects">~/Projects</StyledLink>
@@ -69,6 +66,9 @@ const Image = styled.img`
   max-width: 50%;
   border: 10px solid var(--nord8);
   border-radius: 50%;
+  @media (max-width: 1200px) {
+    border: 4px solid var(--nord8);
+  }
 `;
 
 const Nav = styled.ul`
