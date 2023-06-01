@@ -2,8 +2,8 @@ import styled from "styled-components";
 const ProjectCard = ({ data: { url, name, src, description } }) => {
   return (
     <Wrapper>
-      <img src={src} alt="project thumbnail" />
       <a href={url} alt="link to project on github">
+        <Image src={src} alt="project thumbnail" />
         {name}
       </a>
       <p>{description}</p>
@@ -21,4 +21,7 @@ const Wrapper = styled.section`
   @media (max-width: 500px) {
     width: calc(100% - 2em);
   }
+`;
+const Image = styled.img`
+  max-width: 100%;
 `;

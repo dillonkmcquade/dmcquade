@@ -2,29 +2,29 @@
   {
     "id": 0,
     "name": "Asteroid Blaster",
-    "url": "https://www.github.com/dillonkmcquade",
+    "url": "https://www.github.com/dillonkmcquade/asteroid_blaster",
     "description": "A cross between tetris and asteroids, written in pure JavaScript organize in an object-oriented way",
-    "src": "./assets/project0.jpg"
+    "src": "./assets/project0.png"
   },
   {
     "id": 1,
     "name": "Asteroid Blaster",
-    "url": "https://www.github.com/dillonkmcquade",
+    "url": "https://www.github.com/dillonkmcquade/asteroid_blaster",
     "description": "A cross between tetris and asteroids, written in pure JavaScript organize in an object-oriented way",
-    "src": "./assets/project1.jpg"
+    "src": "./assets/project0.png"
   },
   {
     "id": 2,
     "name": "Asteroid Blaster",
-    "url": "https://www.github.com/dillonkmcquade",
+    "url": "https://www.github.com/dillonkmcquade/asteroid_blaster",
     "description": "A cross between tetris and asteroids, written in pure JavaScript organize in an object-oriented way",
-    "src": "./assets/project2.jpg"
+    "src": "./assets/project0.png"
   },
   {
     "id": 3,
     "name": "Asteroid Blaster",
-    "url": "https://www.github.com/dillonkmcquade",
+    "url": "https://www.github.com/dillonkmcquade/asteroid_blaster",
     "description": "A cross between tetris and asteroids, written in pure JavaScript organize in an object-oriented way",
-    "src": "./assets/project3.jpg"
+    "src": "./assets/project0.png"
   }
 ]
