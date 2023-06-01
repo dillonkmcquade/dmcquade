@@ -4,9 +4,11 @@ import {
   SiExpress,
   SiFedora,
   SiFirefox,
+  SiGit,
   SiGnubash,
   SiGooglechrome,
   SiJavascript,
+  SiLinux,
   SiMongodb,
   SiNeovim,
   SiNodedotjs,
@@ -65,7 +67,7 @@ const Home = () => {
                   <SiMongodb /> MongoDB
                 </ListItem>
                 <ListItem>
-                  <SiGnubash /> Automating with bash
+                  <SiLinux color="black" /> Unix tools
                 </ListItem>
               </ul>
             </Section>
@@ -73,10 +75,13 @@ const Home = () => {
               <SubTitle>My dev environment</SubTitle>
               <ul>
                 <ListItem>
-                  <SiFedora color="var(--nord10)" /> Fedora Workstation 38
+                  <SiFedora color="var(--nord10)" /> Fedora Workstation 38{" "}
                 </ListItem>
                 <ListItem>
                   <SiNeovim color="green" /> NeoVim (my favorite editor)
+                </ListItem>
+                <ListItem>
+                  <SiGit color="var(--nord12)" /> Git
                 </ListItem>
                 <ListItem>
                   <SiPnpm /> pnpm (sometimes yarn{" "}
