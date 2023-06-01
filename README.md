@@ -1,12 +1,12 @@
 ## dmcquade.vercel.app
 
-Hi, my name is Dillon. I'm an aspiring full-stack engineer. This is the source code to ![my portfolio page](https://dmcquade.vercel.app).
+Hi, my name is Dillon. I'm an aspiring full-stack engineer. This is the source code to [my portfolio page](https://dmcquade.vercel.app).
 Here's some info about how I made it:
 
 - It's written in react
 - The styling is done with styled-components
-- The theme is based on ![nord](https://www.nordtheme.com/) theme colors
-- The icons are from ![react-icons](https://react-icons.github.io/react-icons/)
+- The theme is based on [nord](https://www.nordtheme.com/) theme colors
+- The icons are from [react-icons](https://react-icons.github.io/react-icons/)
 - Deployed on Vercel
 
 ### Run it locally:
