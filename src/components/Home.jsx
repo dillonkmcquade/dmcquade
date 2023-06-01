@@ -5,7 +5,6 @@ import {
   SiFedora,
   SiFirefox,
   SiGit,
-  SiGnubash,
   SiGooglechrome,
   SiJavascript,
   SiLinux,
