@@ -16,11 +16,15 @@ const App = () => {
   const [opacity, setOpacity] = useState(1);
 
   const handleScroll = () => {
-    setOpacity(1 - document.documentElement.scrollTop / 1500);
+    setOpacity(1 - document.documentElement.scrollTop / 500);
   };
 
   useEffect(() => {
-    if (opacity <= 0) {
+    if (
+      opacity <= 0 ||
+      document.documentElement.scrollTop >=
+        document.documentElement.offsetHeight
+    ) {
       setBannerVisible(false);
       window.removeEventListener("scroll", handleScroll);
     }
@@ -75,6 +79,7 @@ const Content = styled.main`
   align-self: center;
   max-width: 1400px;
   animation: fadeIn ease-in 2s;
+  -webkit-animation: fadeIn ease-in 2s;
   @media (max-width: 1000px) {
     align-items: center;
     flex-direction: column;
@@ -83,6 +88,14 @@ const Content = styled.main`
     width: 100vw;
   }
   @keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  @-webkit-keyframes fadeIn {
     0% {
       opacity: 0;
     }

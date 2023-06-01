@@ -103,9 +103,17 @@ const Nav = styled.ul`
   margin: 15px;
   list-style: none;
   padding: 1em;
-  animation: slideIn smooth 400ms;
+  animation: slideIn ease-in-out 400ms;
   -webkit-animation: slideIn ease-in-out 400ms;
   @keyframes slideIn {
+    0% {
+      top: -200px;
+    }
+    100% {
+      top: 0;
+    }
+  }
+  @-webkit-keyframes slideIn {
     0% {
       top: -200px;
     }

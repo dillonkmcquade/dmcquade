@@ -41,7 +41,9 @@ const Wrapper = styled.article`
   background-color: var(--nord3);
   border-radius: 1em;
   margin: 1em;
+  padding: 1em;
   animation: fadeIn ease-in 1s;
+  -webkit-animation: fadeIn ease-in 1s;
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -53,8 +55,15 @@ const Wrapper = styled.article`
       opacity: 1;
     }
   }
+  @-webkit-keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
   @media (min-width: 1000px) {
-    min-width: 375px;
     min-width: calc(1000px - 2em);
   }
 `;
