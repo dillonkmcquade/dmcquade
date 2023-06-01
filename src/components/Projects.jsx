@@ -14,9 +14,8 @@ const Projects = () => {
 export default Projects;
 const Wrapper = styled.article`
   display: flex;
-  min-width: calc(75% - 2em);
+  max-width: calc(1000px - 2em);
   flex-wrap: wrap;
-  margin: 1em;
   animation: fadeIn ease-in 1s;
   @keyframes fadeIn {
     0% {
@@ -28,10 +27,7 @@ const Wrapper = styled.article`
       opacity: 1;
     }
   }
-  @media (min-width: 1400px) {
-    min-width: 1000px;
-  }
-  @media (min-width: 1200px) {
-    min-width: 800px;
+  @media (min-width: 1000px) {
+    min-width: calc(1000px - 2em);
   }
 `;
