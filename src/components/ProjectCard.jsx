@@ -2,7 +2,7 @@ import styled from "styled-components";
 const ProjectCard = ({ data: { url, name, src, description } }) => {
   return (
     <Wrapper>
-      <img src={src} />
+      <img src={src} alt="project thumbnail" />
       <a href={url} alt="link to project on github">
         {name}
       </a>

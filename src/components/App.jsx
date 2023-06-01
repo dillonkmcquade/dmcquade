@@ -1,11 +1,15 @@
+//libraries
 import { useEffect, useState } from "react";
 import { Routes, Route } from "react-router-dom";
-import GlobalStyles from "../GlobalStyles";
+//Components
 import SideBar from "./SideBar";
 import Home from "./Home";
 import HeroSection from "./HeroSection";
-import styled from "styled-components";
 import Projects from "./Projects";
+import Contact from "./Contact";
+//styles
+import GlobalStyles from "../GlobalStyles";
+import styled from "styled-components";
 
 const App = () => {
   const [bannerVisible, setBannerVisible] = useState(false);
@@ -21,6 +25,7 @@ const App = () => {
       window.removeEventListener("scroll", handleScroll);
     }
   }, [opacity]);
+
   useEffect(() => {
     if (window.location.pathname === "/") {
       setBannerVisible(true);
@@ -28,6 +33,7 @@ const App = () => {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
   useEffect(() => {
     window.scroll({
       top: 0,
@@ -47,7 +53,7 @@ const App = () => {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/projects" element={<Projects />} />
-            <Route path="/contact" element={<Home />} />
+            <Route path="/contact" element={<Contact />} />
             <Route path="*" element={<Home />} />
           </Routes>
         </Content>
@@ -72,6 +78,9 @@ const Content = styled.main`
   @media (max-width: 1000px) {
     align-items: center;
     flex-direction: column;
+  }
+  @media (min-width: 500px) {
+    width: 100vw;
   }
   @keyframes fadeIn {
     0% {
