@@ -1,23 +1,6 @@
 import styled from "styled-components";
 import { IconContext } from "react-icons";
-import {
-  SiExpress,
-  SiFedora,
-  SiFirefox,
-  SiGit,
-  SiGooglechrome,
-  SiJavascript,
-  SiLinux,
-  SiMongodb,
-  SiNeovim,
-  SiNodedotjs,
-  SiPnpm,
-  SiReact,
-  SiStyledcomponents,
-  SiTmux,
-  SiTypescript,
-  SiYarn,
-} from "react-icons/si";
+import { myDevEnvironment, myStack, wantToLearn } from "../arrays";
 
 const Home = () => {
   return (
@@ -44,54 +27,21 @@ const Home = () => {
             <Section>
               <SubTitle>My stack</SubTitle>
               <ul>
-                <ListItem>
-                  <SiJavascript color="var(--nord13)" /> JavaScript
-                </ListItem>
-                <ListItem>
-                  <SiNodedotjs color="var(--nord14)" /> Node.js
-                </ListItem>
-                <ListItem>
-                  <SiTypescript color="var(--nord10)" /> Some Typescript
-                </ListItem>
-                <ListItem>
-                  <SiReact color="cyan" /> React
-                </ListItem>
-                <ListItem>
-                  <SiStyledcomponents /> Styled-Components
-                </ListItem>
-                <ListItem>
-                  <SiExpress /> Express.js
-                </ListItem>
-                <ListItem>
-                  <SiMongodb /> MongoDB
-                </ListItem>
-                <ListItem>
-                  <SiLinux color="black" /> Unix tools
-                </ListItem>
+                {myStack.map((item) => (
+                  <ListItem>
+                    <item.icon color={item.iconColor} /> {item.text}
+                  </ListItem>
+                ))}
               </ul>
             </Section>
             <Section>
               <SubTitle>My dev environment</SubTitle>
               <ul>
-                <ListItem>
-                  <SiFedora color="var(--nord10)" /> Fedora Workstation 38{" "}
-                </ListItem>
-                <ListItem>
-                  <SiNeovim color="green" /> NeoVim (my favorite editor)
-                </ListItem>
-                <ListItem>
-                  <SiGit color="var(--nord12)" /> Git
-                </ListItem>
-                <ListItem>
-                  <SiPnpm /> pnpm (sometimes yarn{" "}
-                  <SiYarn color="var(--nord10)" />){" "}
-                </ListItem>
-                <ListItem>
-                  Zsh + <SiTmux /> Tmux
-                </ListItem>
-                <ListItem>
-                  <SiGooglechrome /> <SiFirefox /> Chrome/firefox devtools
-                </ListItem>
+                {myDevEnvironment.map((item) => (
+                  <ListItem>
+                    <item.icon color={item.iconColor} /> {item.text}
+                  </ListItem>
+                ))}
               </ul>
             </Section>
           </SectionContainer>
@@ -106,11 +56,9 @@ const Home = () => {
             <Section>
               <SubTitle>Things I want to learn</SubTitle>
               <ul>
-                <ListItem>Typescript</ListItem>
-                <ListItem>Java</ListItem>
-                <ListItem>Go</ListItem>
-                <ListItem>Rust</ListItem>
-                <ListItem>Postgres</ListItem>
+                {wantToLearn.map((item) => (
+                  <ListItem>{item}</ListItem>
+                ))}
               </ul>
             </Section>
           </SectionContainer>

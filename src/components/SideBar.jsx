@@ -1,10 +1,9 @@
 import { useState, useEffect } from "react";
 import { NavLink, useLocation } from "react-router-dom";
 import styled from "styled-components";
-import { BsLinkedin, BsGithub } from "react-icons/bs";
-import { AiFillMail } from "react-icons/ai";
 import { ImLocation } from "react-icons/im";
 import { GiHamburgerMenu } from "react-icons/gi";
+import { sideBarLinks, sideBarIcons } from "../arrays.js";
 
 const SideBar = () => {
   const [visible, setVisible] = useState(false);
@@ -27,38 +26,25 @@ const SideBar = () => {
           <h1>Dillon McQuade</h1>
           <h2>Full-Stack web developer</h2>
         </ListItem>
-        <ListItem>
-          <StyledLink to="/">~/About</StyledLink>
-        </ListItem>
-        <ListItem>
-          <StyledLink to="/projects">~/Projects</StyledLink>
-        </ListItem>
-        <ListItem>
-          <StyledLink to="/contact">~/Contact</StyledLink>
-        </ListItem>
+        {sideBarLinks.map((item) => (
+          <ListItem>
+            <StyledLink to={item.path}>{item.text}</StyledLink>
+          </ListItem>
+        ))}
         <ListItem>
           <Location /> Montreal, QC
         </ListItem>
         <Icons>
-          <a
-            href="https://linkedin.com/in/dillonkmcquade"
-            target="_blank"
-            aria-label="Link to my linkedin"
-            rel="noreferrer"
-          >
-            <LinkedIn />
-          </a>
-          <a
-            href="https://www.github.com/dillonkmcquade"
-            target="_blank"
-            aria-label="Link to my github"
-            rel="noreferrer"
-          >
-            <GitHub />
-          </a>
-          <a aria-label="Email me" href="mailto:dillonkmcquade@gmail.com">
-            <Mail />
-          </a>
+          {sideBarIcons.map((item) => (
+            <a
+              href={item.href}
+              aria-label={item.label}
+              target="_blank"
+              rel="noreferrer"
+            >
+              <item.icon />
+            </a>
+          ))}
         </Icons>
       </Nav>
     </Wrapper>
@@ -144,31 +130,6 @@ const ListItem = styled.li`
 const Icons = styled(ListItem)`
   margin: 1.25em 0;
   min-width: 150px;
-`;
-const LinkedIn = styled(BsLinkedin)`
-  scale: 2;
-  margin: 0 1em;
-  cursor: pointer;
-  &:hover {
-    color: var(--nord10);
-  }
-`;
-const GitHub = styled(BsGithub)`
-  scale: 2;
-  cursor: pointer;
-  margin: 0 1em;
-  &:hover {
-    color: var(--nord1);
-  }
-`;
-
-const Mail = styled(AiFillMail)`
-  scale: 2;
-  cursor: pointer;
-  margin: 0 1em;
-  &:hover {
-    color: var(--nord15);
-  }
 `;
 
 const Location = styled(ImLocation)`
