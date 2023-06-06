@@ -18,6 +18,31 @@ import {
   SiTypescript,
 } from "react-icons/si";
 
+const LinkedIn = styled(BsLinkedin)`
+  scale: 2;
+  margin: 0 1em;
+  cursor: pointer;
+  &:hover {
+    color: var(--nord10);
+  }
+`;
+const GitHub = styled(BsGithub)`
+  scale: 2;
+  cursor: pointer;
+  margin: 0 1em;
+  &:hover {
+    color: var(--nord1);
+  }
+`;
+
+const Mail = styled(AiFillMail)`
+  scale: 2;
+  cursor: pointer;
+  margin: 0 1em;
+  &:hover {
+    color: var(--nord15);
+  }
+`;
 export const myStack = [
   { text: "JavaScript", icon: SiJavascript, iconColor: "var(--nord13)" },
   { text: "Node.js", icon: SiNodedotjs, iconColor: "var(--nord14)" },
@@ -61,29 +86,3 @@ export const sideBarIcons = [
     icon: Mail,
   },
 ];
-
-const LinkedIn = styled(BsLinkedin)`
-  scale: 2;
-  margin: 0 1em;
-  cursor: pointer;
-  &:hover {
-    color: var(--nord10);
-  }
-`;
-const GitHub = styled(BsGithub)`
-  scale: 2;
-  cursor: pointer;
-  margin: 0 1em;
-  &:hover {
-    color: var(--nord1);
-  }
-`;
-
-const Mail = styled(AiFillMail)`
-  scale: 2;
-  cursor: pointer;
-  margin: 0 1em;
-  &:hover {
-    color: var(--nord15);
-  }
-`;
