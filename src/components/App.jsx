@@ -1,13 +1,10 @@
-//libraries
 import { useEffect, useState } from "react";
 import { Routes, Route } from "react-router-dom";
-//Components
 import SideBar from "./SideBar";
 import Home from "./Home";
 import HeroSection from "./HeroSection";
 import Projects from "./Projects";
 import Contact from "./Contact";
-//styles
 import GlobalStyles from "../GlobalStyles";
 import styled from "styled-components";
 
@@ -15,10 +12,12 @@ const App = () => {
   const [bannerVisible, setBannerVisible] = useState(false);
   const [opacity, setOpacity] = useState(1);
 
+  //decrease opacity of banner on scrolldown
   const handleScroll = () => {
     setOpacity(1 - document.documentElement.scrollTop / 500);
   };
 
+  //remove banner when achieved scroll depth
   useEffect(() => {
     if (
       opacity <= 0 ||
@@ -30,14 +29,21 @@ const App = () => {
     }
   }, [opacity]);
 
+  //if root path and first load, show banner
   useEffect(() => {
-    if (window.location.pathname === "/") {
+    if (
+      window.location.pathname === "/" &&
+      !window.localStorage.getItem("animation")
+    ) {
       setBannerVisible(true);
+      window.localStorage.setItem("animation", true);
     }
+
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  //scroll to top of page after removing banner
   useEffect(() => {
     window.scroll({
       top: 0,

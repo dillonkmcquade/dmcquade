@@ -43,25 +43,54 @@ const Mail = styled(AiFillMail)`
     color: var(--nord15);
   }
 `;
-export const myStack = [
-  { text: "JavaScript", icon: SiJavascript, iconColor: "var(--nord13)" },
-  { text: "Node.js", icon: SiNodedotjs, iconColor: "var(--nord14)" },
-  { text: "Some Typescript", icon: SiTypescript, iconColor: "var(--nord10)" },
-  { text: "React", icon: SiReact, iconColor: "cyan" },
-  { text: "Styled-Components", icon: SiStyledcomponents },
-  { text: "Express.js", icon: SiExpress },
-  { text: "MongoDB", icon: SiMongodb },
-  { text: "Unix tools", icon: SiLinux, iconColor: "black" },
+export const data = [
+  {
+    subtitle: "My stack",
+    array: [
+      { text: "JavaScript", icon: SiJavascript, iconColor: "var(--nord13)" },
+      { text: "Node.js", icon: SiNodedotjs, iconColor: "var(--nord14)" },
+      {
+        text: "Some Typescript",
+        icon: SiTypescript,
+        iconColor: "var(--nord10)",
+      },
+      { text: "React", icon: SiReact, iconColor: "cyan" },
+      { text: "Styled-Components", icon: SiStyledcomponents },
+      { text: "Express.js", icon: SiExpress },
+      { text: "MongoDB", icon: SiMongodb },
+      { text: "Unix tools", icon: SiLinux, iconColor: "black" },
+    ],
+  },
+  {
+    subtitle: "My development environment",
+    array: [
+      {
+        text: "Fedora Workstation",
+        icon: SiFedora,
+        iconColor: "var(--nord10)",
+      },
+      {
+        text: "NeoVim (my favorite editor)",
+        icon: SiNeovim,
+        iconColor: "green",
+      },
+      { text: "Git", icon: SiGit, iconColor: "var(--nord12)" },
+      { text: "pnpm", icon: SiPnpm },
+      { text: "Zsh + Tmux", icon: SiTmux },
+      { text: "Chrome/firefox devtools", icon: SiGooglechrome },
+    ],
+  },
+  {
+    subtitle: "Things I want to learn",
+    array: [
+      { text: "Typescript" },
+      { text: "Java" },
+      { text: "Go" },
+      { text: "Rust" },
+      { text: "Postgres" },
+    ],
+  },
 ];
-export const myDevEnvironment = [
-  { text: "Fedora Workstation", icon: SiFedora, iconColor: "var(--nord10)" },
-  { text: "NeoVim (my favorite editor)", icon: SiNeovim, iconColor: "green" },
-  { text: "Git", icon: SiGit, iconColor: "var(--nord12)" },
-  { text: "pnpm", icon: SiPnpm },
-  { text: "Zsh + Tmux", icon: SiTmux },
-  { text: "Chrome/firefox devtools", icon: SiGooglechrome },
-];
-export const wantToLearn = ["Typescript", "Java", "Go", "Rust", "Postgres"];
 
 export const sideBarLinks = [
   { text: "~/About", path: "/" },

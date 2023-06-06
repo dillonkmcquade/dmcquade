@@ -27,8 +27,10 @@ const SideBar = () => {
           <h2>Full-Stack web developer</h2>
         </ListItem>
         {sideBarLinks.map((item) => (
-          <ListItem>
-            <StyledLink to={item.path}>{item.text}</StyledLink>
+          <ListItem key={item.text}>
+            <StyledLink to={item.path} key={item.text}>
+              {item.text}
+            </StyledLink>
           </ListItem>
         ))}
         <ListItem>
@@ -41,6 +43,7 @@ const SideBar = () => {
               aria-label={item.label}
               target="_blank"
               rel="noreferrer"
+              key={item.href}
             >
               <item.icon />
             </a>

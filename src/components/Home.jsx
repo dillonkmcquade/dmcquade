@@ -1,67 +1,26 @@
 import styled from "styled-components";
 import { IconContext } from "react-icons";
-import { myDevEnvironment, myStack, wantToLearn } from "../arrays";
+import { data } from "../arrays";
+import Section from "./Section";
 
 const Home = () => {
   return (
     <IconContext.Provider value={{ size: "25px" }}>
       <Wrapper>
-        <SectionContainer>
-          <Head>
-            <Name>Dillon McQuade</Name>
-            <Title>Full Stack Developer</Title>
-          </Head>
-          <Section>
-            Hi, i'm Dillon. I'm a (soon-to-be)full-stack developer from
-            Montreal, Quebec.
-          </Section>
-          <Section>
+        <Head>
+          <Name>Dillon McQuade</Name>
+          <Title>Full Stack Developer</Title>
+          <div>
             I'm a an aspiring software dev, linux enthusiast, and outdoorsman.
             When i'm not customizing my development tools or tinkering with my
             config files, I'm usually out hiking, camping, backpacking or
             biking.
-          </Section>
-        </SectionContainer>
+          </div>
+        </Head>
         <Lists>
-          <SectionContainer>
-            <Section>
-              <SubTitle>My stack</SubTitle>
-              <ul>
-                {myStack.map((item) => (
-                  <ListItem>
-                    <item.icon color={item.iconColor} /> {item.text}
-                  </ListItem>
-                ))}
-              </ul>
-            </Section>
-            <Section>
-              <SubTitle>My dev environment</SubTitle>
-              <ul>
-                {myDevEnvironment.map((item) => (
-                  <ListItem>
-                    <item.icon color={item.iconColor} /> {item.text}
-                  </ListItem>
-                ))}
-              </ul>
-            </Section>
-          </SectionContainer>
-          <SectionContainer>
-            <Section>
-              <SubTitle>Other Technologies that I occasionally use</SubTitle>
-              <ul>
-                <ListItem>Podman, Toolbx, Docker</ListItem>
-                <ListItem>Virtual-Machine Manager</ListItem>
-              </ul>
-            </Section>
-            <Section>
-              <SubTitle>Things I want to learn</SubTitle>
-              <ul>
-                {wantToLearn.map((item) => (
-                  <ListItem>{item}</ListItem>
-                ))}
-              </ul>
-            </Section>
-          </SectionContainer>
+          {data.map((item) => (
+            <Section section={item} key={item.subtitle} />
+          ))}
         </Lists>
       </Wrapper>
     </IconContext.Provider>
@@ -113,32 +72,10 @@ const Title = styled.h2`
   color: var(--nord8);
 `;
 
-const SubTitle = styled.h3`
-  color: var(--nord8);
-  margin: 10px 0;
-  font-size: 1.5em;
-`;
-const Section = styled.section`
-  margin: 20px;
-`;
-const ListItem = styled.li`
-  margin: 10px;
-`;
-
-const SectionContainer = styled.div`
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  width: 100%;
-  @media (max-width: 900px) {
-    align-items: flex-start;
-  }
-  @media (min-width: 900px) {
-    width: 50%;
-  }
-`;
 const Lists = styled.div`
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  @media (min-width: 1000px) {
+    justify-content: center;
+  }
 `;
