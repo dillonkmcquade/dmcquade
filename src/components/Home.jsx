@@ -11,10 +11,11 @@ const Home = () => {
           <Name>Dillon McQuade</Name>
           <Title>Full Stack Developer</Title>
           <div>
-            I'm a an aspiring software dev, linux enthusiast, and outdoorsman.
-            When i'm not customizing my development tools or tinkering with my
-            config files, I'm usually out hiking, camping, backpacking or
-            biking.
+            I'm an aspiring software dev, linux enthusiast, and outdoorsman. I
+            mainly use JavaScript to develop full-stack applications. I'm also
+            intrigued by developer tools and terminal applications (CLI's). When
+            i'm not customizing my development tools or tinkering with my config
+            files, I'm usually out hiking, camping, backpacking or biking.
           </div>
         </Head>
         <Lists>
