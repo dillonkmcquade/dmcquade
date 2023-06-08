@@ -10,14 +10,19 @@ const Home = () => {
         <Head>
           <Name>Dillon McQuade</Name>
           <Title>Full Stack Developer</Title>
-          <div>
-            I'm an aspiring software dev, linux enthusiast, and outdoorsman. I
-            mainly use JavaScript to develop full-stack applications. I'm also
-            intrigued by developer tools and terminal applications (CLI's). When
-            i'm not customizing my development tools or tinkering with my config
-            files, I'm usually out hiking, camping, backpacking or biking.
-          </div>
+          <About>
+            I'm an aspiring software dev, linux enthusiast, and outdoorsman.
+          </About>
+          <About>I use JavaScript to develop full-stack applications.</About>
+          <About>
+            I'm intrigued by developer tools and terminal applications (CLI's).
+          </About>
+          <About>
+            I like customizing my development tools and tinkering with my config
+            files. I'm also into hiking, camping, backpacking or biking.
+          </About>
         </Head>
+        <Rule />
         <Lists>
           {data.map((item) => (
             <Section section={item} key={item.subtitle} />
@@ -59,18 +64,26 @@ const Wrapper = styled.article`
   @media (min-width: 1000px) {
     min-width: calc(1000px - 2em);
   }
+  @media (max-width: 500px) {
+    width: calc(100% - 2em);
+  }
 `;
-const Head = styled.div`
-  text-align: center;
+const Head = styled.ul`
+  display: flex;
+  flex-direction: column;
   align-self: center;
 `;
 const Name = styled.h1`
+  align-self: center;
   font-size: 2em;
   color: var(--nord7);
+  margin-top: 20px;
 `;
 const Title = styled.h2`
+  align-self: center;
   font-size: 1.5em;
   color: var(--nord8);
+  margin-bottom: 20px;
 `;
 
 const Lists = styled.div`
@@ -79,4 +92,12 @@ const Lists = styled.div`
   @media (min-width: 1000px) {
     justify-content: center;
   }
+`;
+const About = styled.li`
+  margin: 1em 3em;
+`;
+const Rule = styled.hr`
+  width: 30%;
+  margin: 2em auto calc(2em - 20px) auto;
+  color: var(--nord7);
 `;

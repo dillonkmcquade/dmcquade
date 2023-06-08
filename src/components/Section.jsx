@@ -22,7 +22,7 @@ const Wrapper = styled.section`
   flex-direction: column;
   justify-content: center;
   margin: 20px;
-  width: 100%;
+  width: calc(100% - 40px);
 `;
 const Grid = styled.ul`
   display: grid;
@@ -36,7 +36,9 @@ const SubTitle = styled.h3`
 `;
 
 const ListItem = styled.li`
-  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   margin: 10px;
   list-style: none;
 `;
