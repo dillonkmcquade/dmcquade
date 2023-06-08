@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { IconContext } from "react-icons";
-import { data } from "../arrays";
+import { data } from "../data/arrays";
 import Section from "./Section";
 
 const Home = () => {

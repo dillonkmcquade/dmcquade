@@ -3,7 +3,7 @@ import { NavLink, useLocation } from "react-router-dom";
 import styled from "styled-components";
 import { ImLocation } from "react-icons/im";
 import { GiHamburgerMenu } from "react-icons/gi";
-import { sideBarLinks, sideBarIcons } from "../arrays.js";
+import { sideBarLinks, sideBarIcons } from "../data/arrays.js";
 
 const SideBar = () => {
   const [visible, setVisible] = useState(false);

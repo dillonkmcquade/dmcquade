@@ -1,6 +1,6 @@
 import ProjectCard from "./ProjectCard";
 import styled from "styled-components";
-import data from "./data.json";
+import data from "../data/data.json";
 const Projects = () => {
   return (
     <Wrapper>
