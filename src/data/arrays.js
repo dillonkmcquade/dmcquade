@@ -84,7 +84,6 @@ export const data = [
     subtitle: "Things I want to learn",
     array: [
       { text: "Typescript" },
-      { text: "Java" },
       { text: "Go" },
       { text: "Rust" },
       { text: "Postgres" },
