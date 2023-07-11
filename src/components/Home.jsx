@@ -17,10 +17,7 @@ const Home = () => {
           <About>
             I'm intrigued by developer tools and terminal applications (CLI's).
           </About>
-          <About>
-            I like customizing my development tools and tinkering with my config
-            files. I'm also into hiking, camping, backpacking or biking.
-          </About>
+          <About>I'm also into hiking, camping, backpacking and biking.</About>
         </Head>
         <Rule />
         <Lists>
