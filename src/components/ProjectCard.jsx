@@ -18,10 +18,12 @@ const Wrapper = styled.section`
   width: calc(50% - 2em);
   margin: 1em;
   padding: 1em;
+  max-height: 350px;
   @media (max-width: 500px) {
     width: calc(100% - 2em);
   }
 `;
 const Image = styled.img`
   max-width: 100%;
+  overflow: hidden;
 `;
