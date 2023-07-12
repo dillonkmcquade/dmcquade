@@ -1,6 +1,6 @@
 ## dmcquade.vercel.app
 
-Hi, my name is Dillon. I'm an aspiring full-stack engineer. This is the source code to [my portfolio page](https://dmcquade.vercel.app).
+Hi, my name is Dillon. This is the source code to [my portfolio page](https://dmcquade.vercel.app).
 Here's some info about how I made it:
 
 - It's written in react
