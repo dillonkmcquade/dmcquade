@@ -50,7 +50,7 @@ const Nav = styled.nav`
 `;
 const Image = styled.img`
   height: 100px;
-  border: 10px solid var(--nord8);
+  border: 2px solid var(--nord8);
   border-radius: 50%;
 `;
 const StyledLink = styled(NavLink)`

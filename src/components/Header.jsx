@@ -17,23 +17,24 @@ export default function Header({ setMenuVisible, menuVisible }) {
 
 const Wrapper = styled.header`
   position: fixed;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  text-align: center;
+  top: 0;
   height: 56px;
   width: 100vw;
-  padding: 0 1rem;
   background-color: var(--nord0);
   border-bottom: 1px solid var(--nord6);
   z-index: 10;
+  margin: 0 auto;
 `;
 
 const InnerContainer = styled.div`
-  width: 100%;
   display: flex;
+  align-items: center;
   justify-content: space-between;
-  margin: 0 1rem;
+  width: 100%;
+  height: 100%;
+  padding: 0 1rem;
+  max-width: 1400px;
+  margin: 0 auto;
 `;
 
 const Hamburger = styled(GiHamburgerMenu)`

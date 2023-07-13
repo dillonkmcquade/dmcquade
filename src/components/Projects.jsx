@@ -19,7 +19,7 @@ const Wrapper = styled.article`
   width: 95vw;
   margin: 0 auto;
   flex-wrap: wrap;
-  @media (min-width: 1000px) {
-    min-width: calc(1000px - 2em);
+  @media (min-width: 625px) {
+    justify-content: center;
   }
 `;

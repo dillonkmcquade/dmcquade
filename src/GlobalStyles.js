@@ -47,6 +47,6 @@ export default createGlobalStyle`
     }
     html, body, #root {
       background-color: var(--nord0);
-      min-height: 100vh;
+      min-height: calc( 100vh - 56px );
 }
 `;

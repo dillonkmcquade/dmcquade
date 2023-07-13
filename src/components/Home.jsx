@@ -37,17 +37,21 @@ const Wrapper = styled.article`
   position: relative;
   top: 56px;
   width: 95vw;
-  margin: 1rem auto;
+  margin: 1rem auto 0 auto;
   font-size: 0.8rem;
   align-items: center;
   flex-direction: column;
+  @media (min-width: 625px) {
+    max-width: 1000px;
+  }
 `;
-const Head = styled.ul`
+const Head = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
   background-color: var(--nord3);
   border-radius: 1em;
+  width: 100%;
 `;
 const Name = styled.h1`
   font-size: 2em;
@@ -64,10 +68,8 @@ const Lists = styled.div`
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  @media (min-width: 1000px) {
-  }
 `;
-const About = styled.li`
+const About = styled.p`
   margin: 1em 3em;
 `;
 const Rule = styled.hr`

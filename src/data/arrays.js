@@ -94,7 +94,6 @@ export const data = [
 export const sideBarLinks = [
   { text: "~/About", path: "/" },
   { text: "~/Projects", path: "/projects" },
-  { text: "~/Contact", path: "/contact" },
 ];
 
 export const sideBarIcons = [

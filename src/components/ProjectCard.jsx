@@ -33,6 +33,10 @@ const Wrapper = styled.section`
   margin: 1rem 0;
   padding: 1em;
   font-size: 0.8rem;
+  @media (min-width: 625px) {
+    max-width: 350px;
+    margin: 1rem;
+  }
 `;
 
 const TitleAndIcons = styled.div`
