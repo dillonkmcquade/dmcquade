@@ -5,7 +5,7 @@ import Section from "./Section";
 
 const Home = () => {
   return (
-    <IconContext.Provider value={{ size: "25px" }}>
+    <IconContext.Provider value={{ size: "16px" }}>
       <Wrapper>
         <Head>
           <Name>Dillon McQuade</Name>
@@ -33,51 +33,28 @@ const Home = () => {
 export default Home;
 
 const Wrapper = styled.article`
-  max-width: calc(1000px - 2em);
-  background-color: var(--nord3);
-  border-radius: 1em;
-  margin: 1em;
-  animation: fadeIn ease-in 1s;
-  -webkit-animation: fadeIn ease-in 1s;
   display: flex;
+  position: relative;
+  top: 56px;
+  width: 95vw;
+  margin: 1rem auto;
+  font-size: 0.8rem;
   align-items: center;
   flex-direction: column;
-  @keyframes fadeIn {
-    0% {
-      opacity: 0;
-    }
-    100% {
-      opacity: 1;
-    }
-  }
-  @-webkit-keyframes fadeIn {
-    0% {
-      opacity: 0;
-    }
-    100% {
-      opacity: 1;
-    }
-  }
-  @media (min-width: 1000px) {
-    min-width: calc(1000px - 2em);
-  }
-  @media (max-width: 500px) {
-    width: calc(100% - 2em);
-  }
 `;
 const Head = styled.ul`
   display: flex;
   flex-direction: column;
-  align-self: center;
+  align-items: center;
+  background-color: var(--nord3);
+  border-radius: 1em;
 `;
 const Name = styled.h1`
-  align-self: center;
   font-size: 2em;
   color: var(--nord7);
   margin-top: 20px;
 `;
 const Title = styled.h2`
-  align-self: center;
   font-size: 1.5em;
   color: var(--nord8);
   margin-bottom: 20px;
@@ -86,8 +63,8 @@ const Title = styled.h2`
 const Lists = styled.div`
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
   @media (min-width: 1000px) {
-    justify-content: center;
   }
 `;
 const About = styled.li`

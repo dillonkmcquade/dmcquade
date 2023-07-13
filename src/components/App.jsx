@@ -1,73 +1,32 @@
 import { useEffect, useState } from "react";
-import { Routes, Route } from "react-router-dom";
-import SideBar from "./SideBar";
+import { Routes, Route, useLocation } from "react-router-dom";
+import Header from "./Header";
 import Home from "./Home";
-import HeroSection from "./HeroSection";
+import Menu from "./Menu";
 import Projects from "./Projects";
 import Contact from "./Contact";
 import GlobalStyles from "../GlobalStyles";
 import styled from "styled-components";
 
 const App = () => {
-  const [bannerVisible, setBannerVisible] = useState(false);
-  const [opacity, setOpacity] = useState(1);
+  const location = useLocation();
+  const [menuVisible, setMenuVisible] = useState(false);
 
-  //decrease opacity of banner on scrolldown
-  const handleScroll = () => {
-    setOpacity(1 - document.documentElement.scrollTop / 500);
-  };
-
-  //remove banner when achieved scroll depth
   useEffect(() => {
-    if (
-      opacity <= 0 ||
-      document.documentElement.scrollTop >=
-        document.documentElement.offsetHeight
-    ) {
-      setBannerVisible(false);
-      window.removeEventListener("scroll", handleScroll);
-    }
-  }, [opacity]);
-
-  //if root path and first load, show banner
-  useEffect(() => {
-    if (
-      window.location.pathname === "/" &&
-      !window.localStorage.getItem("animation")
-    ) {
-      setBannerVisible(true);
-      window.localStorage.setItem("animation", true);
-    }
-
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
-  //scroll to top of page after removing banner
-  useEffect(() => {
-    window.scroll({
-      top: 0,
-      behavior: "smooth",
-    });
-  }, [bannerVisible]);
+    setMenuVisible(false);
+  }, [location]);
 
   return (
-    <Wrapper height={bannerVisible ? "300vh" : "100vh"}>
+    <Wrapper>
       <GlobalStyles />
-      {bannerVisible && (
-        <HeroSection setBannerVisible={setBannerVisible} opacity={opacity} />
-      )}
-      {!bannerVisible && (
-        <Content>
-          <SideBar />
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/projects" element={<Projects />} />
-            <Route path="/contact" element={<Contact />} />
-            <Route path="*" element={<Home />} />
-          </Routes>
-        </Content>
-      )}
+      <Header setMenuVisible={setMenuVisible} menuVisible={menuVisible} />
+      <Menu visible={menuVisible} />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/projects" element={<Projects />} />
+        <Route path="/contact" element={<Contact />} />
+        <Route path="*" element={<Home />} />
+      </Routes>
     </Wrapper>
   );
 };
@@ -77,36 +36,6 @@ export default App;
 const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
-  min-height: ${(props) => props.height};
+  height: 100vh;
   width: 100vw;
-`;
-const Content = styled.main`
-  display: flex;
-  align-self: center;
-  max-width: 1400px;
-  animation: fadeIn ease-in 2s;
-  -webkit-animation: fadeIn ease-in 2s;
-  @media (max-width: 1000px) {
-    align-items: center;
-    flex-direction: column;
-  }
-  @media (min-width: 500px) {
-    width: 100vw;
-  }
-  @keyframes fadeIn {
-    0% {
-      opacity: 0;
-    }
-    100% {
-      opacity: 1;
-    }
-  }
-  @-webkit-keyframes fadeIn {
-    0% {
-      opacity: 0;
-    }
-    100% {
-      opacity: 1;
-    }
-  }
 `;

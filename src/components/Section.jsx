@@ -7,7 +7,8 @@ const Section = ({ section: { subtitle, array } }) => {
       <Grid>
         {array.map((item) => (
           <ListItem key={item.text}>
-            {item.icon && <item.icon color={item.iconColor} />} {item.text}
+            <div>{item.icon && <item.icon color={item.iconColor} />} </div>
+            <p>{item.text}</p>
           </ListItem>
         ))}
       </Grid>
@@ -21,8 +22,10 @@ const Wrapper = styled.section`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margin: 20px;
-  width: calc(100% - 40px);
+  background-color: var(--nord3);
+  border-radius: 1em;
+  width: 100%;
+  margin: 1rem 0;
 `;
 const Grid = styled.ul`
   display: grid;
@@ -31,7 +34,8 @@ const Grid = styled.ul`
 `;
 const SubTitle = styled.h3`
   color: var(--nord8);
-  margin: 10px 0;
+  padding: 1rem;
+  text-align: center;
   font-size: 1.5em;
 `;
 

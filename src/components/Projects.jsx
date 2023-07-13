@@ -13,20 +13,12 @@ const Projects = () => {
 
 export default Projects;
 const Wrapper = styled.article`
+  position: relative;
+  top: 56px;
   display: flex;
-  max-width: calc(1000px - 2em);
+  width: 95vw;
+  margin: 0 auto;
   flex-wrap: wrap;
-  animation: fadeIn ease-in 1s;
-  @keyframes fadeIn {
-    0% {
-      transform: translateY(-10px);
-      opacity: 0;
-    }
-    100% {
-      transform: translateY(0px);
-      opacity: 1;
-    }
-  }
   @media (min-width: 1000px) {
     min-width: calc(1000px - 2em);
   }

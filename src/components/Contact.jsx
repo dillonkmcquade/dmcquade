@@ -37,35 +37,16 @@ const Contact = () => {
 export default Contact;
 
 const Wrapper = styled.article`
-  min-width: calc(100% - 2em);
+  position: relative;
+  top: 56px;
+  width: 95vw;
   background-color: var(--nord3);
   border-radius: 1em;
-  margin: 1em;
+  margin: 1em auto;
   padding: 1em;
-  animation: fadeIn ease-in 1s;
-  -webkit-animation: fadeIn ease-in 1s;
   display: flex;
   align-items: center;
   flex-direction: column;
-  @keyframes fadeIn {
-    0% {
-      opacity: 0;
-    }
-    100% {
-      opacity: 1;
-    }
-  }
-  @-webkit-keyframes fadeIn {
-    0% {
-      opacity: 0;
-    }
-    100% {
-      opacity: 1;
-    }
-  }
-  @media (min-width: 1000px) {
-    min-width: calc(1000px - 2em);
-  }
 `;
 const Icons = styled.div`
   margin: 3em 0;
