@@ -3,7 +3,7 @@
     "id": 0,
     "name": "MarketSim",
     "url": "https://www.github.com/dillonkmcquade/sm_sim",
-    "description": "A stock market simulator reminiscent of a personal trading platform, written using React, Express, and MongoDB",
+    "description": "A stock market simulator reminiscent of a personal trading platform, written using React, Express, and MongoDB. Capstone project for Concordia Full-Stack web development bootcamp",
     "src": "./assets/stockDetails.png"
   },
   {
@@ -19,12 +19,5 @@
     "url": "https://www.github.com/dillonkmcquade/dmcquade",
     "description": "My portfolio website, created with React",
     "src": "./assets/bitmap.png"
-  },
-  {
-    "id": 3,
-    "name": "Asteroid Blaster",
-    "url": "https://www.github.com/dillonkmcquade/asteroid_blaster",
-    "description": "A cross between tetris and asteroids, written in pure JavaScript organize in an object-oriented way",
-    "src": "./assets/project0.png"
   }
 ]
