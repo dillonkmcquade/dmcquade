@@ -6,7 +6,7 @@ const ProjectCard = ({
 }) => {
   return (
     <Wrapper>
-      <a href={url || github} alt="Website link">
+      <a href={url || github} alt="Website link" rel="noopener" target="_blank">
         <ImageContainer>
           <ProjectThumbnail src={src} alt="project thumbnail" />
         </ImageContainer>
@@ -17,11 +17,11 @@ const ProjectCard = ({
       <hr />
       <p>{description}</p>
       <Icons>
-        <a href={github} alt="github link">
+        <a href={github} alt="github link" rel="noopener" target="_blank">
           <BsGithub size="24px" style={{ margin: "0 .5rem" }} />
         </a>
         {youtube && (
-          <a href={youtube} alt="youtube link">
+          <a href={youtube} alt="youtube link" rel="noopener" target="_blank">
             <BsYoutube size="24px" style={{ margin: "0 .5rem" }} />
           </a>
         )}
