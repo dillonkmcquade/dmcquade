@@ -1,24 +1,30 @@
 import { BsGithub, BsYoutube } from "react-icons/bs";
 import styled from "styled-components";
 
-const ProjectCard = ({ data: { url, name, src, description } }) => {
+const ProjectCard = ({
+  data: { url, github, name, src, description, youtube },
+}) => {
   return (
     <Wrapper>
-      <ImageContainer>
-        <ProjectThumbnail src={src} alt="project thumbnail" />
-      </ImageContainer>
+      <a href={url || github} alt="Website link">
+        <ImageContainer>
+          <ProjectThumbnail src={src} alt="project thumbnail" />
+        </ImageContainer>
+      </a>
       <TitleAndIcons>
         <Name>{name}</Name>
       </TitleAndIcons>
       <hr />
       <p>{description}</p>
       <Icons>
-        <a href={url} alt="github link">
+        <a href={github} alt="github link">
           <BsGithub size="24px" style={{ margin: "0 .5rem" }} />
         </a>
-        <a href={url} alt="youtube link">
-          <BsYoutube size="24px" style={{ margin: "0 .5rem" }} />
-        </a>
+        {youtube && (
+          <a href={youtube} alt="youtube link">
+            <BsYoutube size="24px" style={{ margin: "0 .5rem" }} />
+          </a>
+        )}
       </Icons>
     </Wrapper>
   );
