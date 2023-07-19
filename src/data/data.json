@@ -14,13 +14,5 @@
     "github": "https://www.github.com/dillonkmcquade/asteroid_blaster",
     "description": "A cross between tetris and asteroids, written in pure JavaScript and organized in an object-oriented way",
     "src": "./assets/project0.png"
-  },
-  {
-    "id": 2,
-    "name": "dmcquade.vercel.app",
-    "url": "https://dmcquade.vercel.app",
-    "github": "https://www.github.com/dillonkmcquade/dmcquade",
-    "description": "My portfolio website, created with React",
-    "src": "./assets/bitmap.png"
   }
 ]
