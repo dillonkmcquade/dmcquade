@@ -33,7 +33,7 @@ const InnerContainer = styled.div`
   width: 100%;
   height: 100%;
   padding: 0 1rem;
-  max-width: 1000px;
+  max-width: 1400px;
   margin: 0 auto;
 `;
 

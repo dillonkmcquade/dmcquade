@@ -3,8 +3,9 @@ import { Routes, Route, useLocation } from "react-router-dom";
 import Header from "./Header";
 import Home from "./Home";
 import Menu from "./Menu";
-import Projects from "./Projects";
+import ProjectDetails from "./ProjectDetails";
 import GlobalStyles from "../GlobalStyles";
+import Footer from "./Footer";
 
 const App = () => {
   const location = useLocation();
@@ -18,12 +19,13 @@ const App = () => {
     <>
       <GlobalStyles />
       <Header setMenuVisible={setMenuVisible} menuVisible={menuVisible} />
-      <Menu visible={menuVisible} />
+      <Menu setMenuVisible={setMenuVisible} visible={menuVisible} />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/projects" element={<Projects />} />
+        <Route path="/project/:id" element={<ProjectDetails />} />
         <Route path="*" element={<Home />} />
       </Routes>
+      <Footer />
     </>
   );
 };

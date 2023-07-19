@@ -1,21 +1,17 @@
 import { BsGithub, BsYoutube } from "react-icons/bs";
+import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 
 const ProjectCard = ({
-  data: { url, github, name, src, description, youtube },
+  data: { github, name, src, description, youtube },
+  id,
 }) => {
+  const navigate = useNavigate();
   return (
-    <Wrapper>
-      <a
-        href={url || github}
-        alt="Website link"
-        rel="noreferrer"
-        target="_blank"
-      >
-        <ImageContainer>
-          <ProjectThumbnail src={src} alt="project thumbnail" />
-        </ImageContainer>
-      </a>
+    <Wrapper onClick={() => navigate(`/project/${id}`)}>
+      <ImageContainer>
+        <ProjectThumbnail src={src} alt="project thumbnail" />
+      </ImageContainer>
       <TitleAndIcons>
         <Name>{name}</Name>
       </TitleAndIcons>
@@ -44,6 +40,10 @@ const Wrapper = styled.section`
   margin: 1rem 0;
   padding: 1em;
   font-size: 0.8rem;
+  cursor: pointer;
+  &:hover {
+    opacity: 0.9;
+  }
   @media (min-width: 625px) {
     max-width: 350px;
     margin: 1rem;

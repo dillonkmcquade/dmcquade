@@ -1,17 +1,20 @@
 import styled from "styled-components";
 import { sideBarLinks, sideBarIcons } from "../data/arrays.js";
 import { ImLocation } from "react-icons/im";
-import { NavLink } from "react-router-dom";
+import { HashLink } from "react-router-hash-link";
 
-export default function Menu({ visible }) {
+export default function Menu({ visible, setMenuVisible }) {
   return (
-    <Nav visible={visible ? "flex" : "none"}>
+    <Nav
+      visible={visible ? "flex" : "none"}
+      onClick={() => setMenuVisible(false)}
+    >
       <Image src="./assets/black-and-white-headshot.jpg" alt="picture of me" />
       <h1>Dillon McQuade</h1>
       <h2>Full-Stack web developer</h2>
       {sideBarLinks.map((item) => (
         <ListItem key={item.text}>
-          <StyledLink to={item.path} key={item.text}>
+          <StyledLink to={`/${item.path}`} key={item.text}>
             {item.text}
           </StyledLink>
         </ListItem>
@@ -43,7 +46,7 @@ const Nav = styled.nav`
   width: 100vw;
   border-radius: 1em;
   z-index: 100;
-  margin: 1rem 0;
+  padding: 1rem 0;
   background-color: var(--nord0);
   flex-direction: column;
   align-items: center;
@@ -53,7 +56,7 @@ const Image = styled.img`
   border: 2px solid var(--nord8);
   border-radius: 50%;
 `;
-const StyledLink = styled(NavLink)`
+const StyledLink = styled(HashLink)`
   text-decoration: none;
   &:hover {
     opacity: 0.8;

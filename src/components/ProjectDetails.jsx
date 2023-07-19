@@ -1,17 +1,12 @@
-import ProjectCard from "./ProjectCard";
 import styled from "styled-components";
 import data from "../data/data.json";
-const Projects = () => {
-  return (
-    <Wrapper>
-      {data.map((project) => (
-        <ProjectCard key={project.id} data={project} />
-      ))}
-    </Wrapper>
-  );
+import { useParams } from "react-router-dom";
+const ProjectDetails = () => {
+  const { id } = useParams();
+  return <Wrapper>{data[id].url}</Wrapper>;
 };
 
-export default Projects;
+export default ProjectDetails;
 const Wrapper = styled.article`
   position: relative;
   top: 56px;

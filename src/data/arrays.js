@@ -50,12 +50,12 @@ export const data = [
       { text: "JavaScript", icon: SiJavascript, iconColor: "var(--nord13)" },
       { text: "Node.js", icon: SiNodedotjs, iconColor: "var(--nord14)" },
       {
-        text: "Some Typescript",
+        text: "Typescript",
         icon: SiTypescript,
         iconColor: "var(--nord10)",
       },
       { text: "React", icon: SiReact, iconColor: "cyan" },
-      { text: "Styled-Components", icon: SiStyledcomponents },
+      { text: "styled-components", icon: SiStyledcomponents },
       { text: "Express.js", icon: SiExpress },
       { text: "MongoDB", icon: SiMongodb },
       { text: "Unix tools", icon: SiLinux, iconColor: "black" },
@@ -82,18 +82,13 @@ export const data = [
   },
   {
     subtitle: "Things I want to learn",
-    array: [
-      { text: "Typescript" },
-      { text: "Go" },
-      { text: "Rust" },
-      { text: "Postgres" },
-    ],
+    array: [{ text: "Go" }, { text: "Rust" }, { text: "Postgres" }],
   },
 ];
 
 export const sideBarLinks = [
-  { text: "~/About", path: "/" },
-  { text: "~/Projects", path: "/projects" },
+  { text: "~/About", path: "#about" },
+  { text: "~/Projects", path: "#projects" },
 ];
 
 export const sideBarIcons = [
