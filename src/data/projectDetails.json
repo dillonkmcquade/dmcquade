@@ -1,0 +1,44 @@
+[
+  {
+    "id": 0,
+    "title": "Marketsim",
+    "sections": [
+      {
+        "title": "Project goal",
+        "text": "The goal of this project was to implement as many features as possible that one could find in a personal investing platform.\n I wanted to make sure that at the minimum, users could buy and sell stocks, track their portfolio, and ensure that prices were dynamic.\n Using real market data made this last part easy and quickly allowed me to implement some simple algorithms that would calculate portfolio value based on the purchase price and the current price at any time.",
+        "image": "./assets/stockDetails.png"
+      },
+      {
+        "title": "Research up to 21,000 publicly traded stocks",
+        "text": "In order to search all of these different stocks, I batch imported all of the ticker symbols and associated company names on the US market into my own MongoDB atlas database in order to allow autocomplete searching using a Mongo search index.\n I used the finnhub.io REST API to collect real-time quotes and historical data in order to display prices and visuals and the polygon.io REST API to display news articles related to each stock.",
+        "image": "./assets/research.png"
+      },
+      {
+        "title": "Managing the data",
+        "text": "Being rate limited by an API can make front-end data management a bit difficult, therefore I took some extra measures to reduce the need for refetching quotes all the time.\n I chose to use browser storage to store quotes and added a timestamp property to the json object. Knowing the timestamp of the data, I could refetch fresh data if it became stale after 5 minutes.\n Calculating total value involved knowing the current price of every stock in your portfolio, and this could get costly the larger the portfolio grows.\n Having the ability to store prices locally greatly reduced the number of fetch calls to finnhub.",
+        "image": "./assets/dashboard.png"
+      }
+    ]
+  },
+  {
+    "id": 1,
+    "title": "Asteroid Blaster",
+    "sections": [
+      {
+        "title": "a",
+        "text": "Lorem ipsum dolor sit amet, officia excepteur ex fugiat reprehenderit enim labore culpa sint ad nisi Lorem pariatur mollit ex esse exercitation amet. Nisi anim cupidatat excepteur officia. Reprehenderit nostrud nostrud ipsum Lorem est aliquip amet voluptate voluptate dolor minim nulla est proident. Nostrud officia pariatur ut officia. Sit irure elit esse ea nulla sunt ex occaecat reprehenderit commodo officia dolor Lorem duis laboris cupidatat officia voluptate. Culpa proident adipisicing id nulla nisi laboris ex in Lorem sunt duis officia eiusmod. Aliqua reprehenderit commodo ex non excepteur duis sunt velit enim. Voluptate laboris sint cupidatat ullamco ut ea consectetur et est culpa et culpa duis.",
+        "image": "./assets/asteroid_blaster.png"
+      },
+      {
+        "title": "b",
+        "text": "Lorem ipsum dolor sit amet, officia excepteur ex fugiat reprehenderit enim labore culpa sint ad nisi Lorem pariatur mollit ex esse exercitation amet. Nisi anim cupidatat excepteur officia. Reprehenderit nostrud nostrud ipsum Lorem est aliquip amet voluptate voluptate dolor minim nulla est proident. Nostrud officia pariatur ut officia. Sit irure elit esse ea nulla sunt ex occaecat reprehenderit commodo officia dolor Lorem duis laboris cupidatat officia voluptate. Culpa proident adipisicing id nulla nisi laboris ex in Lorem sunt duis officia eiusmod. Aliqua reprehenderit commodo ex non excepteur duis sunt velit enim. Voluptate laboris sint cupidatat ullamco ut ea consectetur et est culpa et culpa duis.",
+        "image": "./assets/asteroid_blaster.png"
+      },
+      {
+        "title": "c",
+        "text": "Lorem ipsum dolor sit amet, officia excepteur ex fugiat reprehenderit enim labore culpa sint ad nisi Lorem pariatur mollit ex esse exercitation amet. Nisi anim cupidatat excepteur officia. Reprehenderit nostrud nostrud ipsum Lorem est aliquip amet voluptate voluptate dolor minim nulla est proident. Nostrud officia pariatur ut officia. Sit irure elit esse ea nulla sunt ex occaecat reprehenderit commodo officia dolor Lorem duis laboris cupidatat officia voluptate. Culpa proident adipisicing id nulla nisi laboris ex in Lorem sunt duis officia eiusmod. Aliqua reprehenderit commodo ex non excepteur duis sunt velit enim. Voluptate laboris sint cupidatat ullamco ut ea consectetur et est culpa et culpa duis.",
+        "image": "./assets/asteroid_blaster.png"
+      }
+    ]
+  }
+]

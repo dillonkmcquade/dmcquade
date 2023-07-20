@@ -1,32 +1,46 @@
 import { BsGithub, BsYoutube } from "react-icons/bs";
-import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 const ProjectCard = ({
-  data: { github, name, src, description, youtube },
+  data: { github, name, src, description, youtube, url },
   id,
 }) => {
-  const navigate = useNavigate();
   return (
-    <Wrapper onClick={() => navigate(`/project/${id}`)}>
+    <Wrapper>
       <ImageContainer>
         <ProjectThumbnail src={src} alt="project thumbnail" />
       </ImageContainer>
       <TitleAndIcons>
-        <Name>{name}</Name>
+        <Name>
+          {name}{" "}
+          <span style={{ fontSize: "1rem" }}>
+            {url && <a href={url}>Live</a>}
+          </span>
+        </Name>
       </TitleAndIcons>
       <hr />
-      <Description>{description}</Description>
-      <Icons>
-        <a href={github} alt="github link" rel="noreferrer" target="_blank">
-          <BsGithub size="24px" style={{ margin: "0 .5rem" }} />
-        </a>
-        {youtube && (
-          <a href={youtube} alt="youtube link" rel="noreferrer" target="_blank">
-            <BsYoutube size="24px" style={{ margin: "0 .5rem" }} />
-          </a>
-        )}
-      </Icons>
+      <Content>
+        <Description>{description}</Description>
+        <Icons>
+          <div>
+            <a href={github} alt="github link" rel="noreferrer" target="_blank">
+              <BsGithub size="24px" style={{ margin: "0 .5rem" }} />
+            </a>
+            {youtube && (
+              <a
+                href={youtube}
+                alt="youtube link"
+                rel="noreferrer"
+                target="_blank"
+              >
+                <BsYoutube size="24px" style={{ margin: "0 .5rem" }} />
+              </a>
+            )}
+          </div>
+          <LearnMore to={`/project/${id}`}>Learn more</LearnMore>
+        </Icons>
+      </Content>
     </Wrapper>
   );
 };
@@ -40,14 +54,26 @@ const Wrapper = styled.section`
   padding: 1em;
   font-size: 0.8rem;
   background-color: white;
-  cursor: pointer;
-    box-shadow: rgba(0, 0, 0, 0.2) 0px 12px 28px 0px, rgba(0, 0, 0, 0.1) 0px 2px 4px 0px, rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;r;
+  box-shadow:
+    rgba(0, 0, 0, 0.2) 0px 12px 28px 0px,
+    rgba(0, 0, 0, 0.1) 0px 2px 4px 0px,
+    rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;
   &:hover {
     background-color: #faf5e8;
   }
   @media (min-width: 625px) {
     max-width: 350px;
     margin: 1rem;
+  }
+`;
+
+const LearnMore = styled(Link)`
+  color: black;
+  text-underline-offset: 5px;
+  font-weight: bold;
+  line-height: 1.5rem;
+  &:hover {
+    color: var(--nord10);
   }
 `;
 
@@ -63,9 +89,10 @@ const TitleAndIcons = styled.div`
 `;
 
 const Icons = styled.div`
-  margin: 1rem 0 0 0;
-  align-self: flex-end;
+  display: flex;
+  justify-content: space-between;
   color: black;
+  padding: 1rem 0;
 `;
 
 const Name = styled.div`
@@ -79,3 +106,10 @@ const ImageContainer = styled.div`
   justify-content: center;
 `;
 const ProjectThumbnail = styled.img``;
+
+const Content = styled.div`
+  height: 150px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+`;

@@ -17,6 +17,8 @@ const Home = () => {
     "styled-components",
     "linux",
     "React",
+    "Docker",
+    "Podman",
   ];
   return (
     <IconContext.Provider value={{ size: "16px", color: "black" }}>
