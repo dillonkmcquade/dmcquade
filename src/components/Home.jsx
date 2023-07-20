@@ -20,7 +20,7 @@ const Home = () => {
   ];
   return (
     <IconContext.Provider value={{ size: "16px", color: "black" }}>
-      <Wrapper id="about">
+      <Wrapper>
         <Hero />
         <Head>
           <Avatar>
@@ -64,7 +64,6 @@ const Home = () => {
             </About>
           </AboutContainer>
         </Head>
-        <span id="projects" />
         <Rule />
         <Name>Projects</Name>
         <Projects>
@@ -76,7 +75,7 @@ const Home = () => {
         <Name>Skills</Name>
         <Skills>
           {skills.map((skill) => (
-            <Skill>{skill}</Skill>
+            <Skill key={skill}>{skill}</Skill>
           ))}
         </Skills>
       </Wrapper>
@@ -105,7 +104,7 @@ const Head = styled.div`
   justify-content: space-evenly;
   color: var(--nord4);
   background-color: rgba(0, 0, 0, 0.4);
-  @media (min-width: 500px) {
+  @media (min-width: 750px) {
     flex-direction: row;
     min-height: 40vh;
   }
@@ -133,16 +132,17 @@ const Projects = styled.div`
 `;
 const About = styled.p`
   text-align: left;
-  font-size: 0.8rem;
+  font-size: 1rem;
   width: 100%;
   padding: 0.5em 1em;
   line-height: 1.25em;
-  letter-spacing: 0.03em;
+  letter-spacing: 0.05em;
   text-indent: 1rem;
   padding: 1rem;
   @media (min-width: 1000px) {
     max-width: 1000px;
     font-size: 1.1rem;
+    letter-spacing: 0.03em;
   }
 `;
 const Rule = styled.hr`
@@ -174,8 +174,8 @@ const Hero = styled.div`
   position: absolute;
   top: -100px;
   z-index: -1;
-  @media (min-width: 500px) {
-    height: 80vh;
+  @media (min-width: 750px) {
+    height: 90vh;
   }
 `;
 
@@ -187,7 +187,7 @@ const Avatar = styled.div`
 const AboutContainer = styled.div`
   text-align: center;
   max-width: 100%;
-  @media (min-width: 500px) {
+  @media (min-width: 750px) {
     max-width: 30%;
   }
 `;
