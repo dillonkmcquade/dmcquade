@@ -1,35 +1,68 @@
 import styled from "styled-components";
+import Typewriter from "typewriter-effect";
 import { IconContext } from "react-icons";
 import data from "../data/data.json";
 import ProjectCard from "./ProjectCard";
 import { ImLocation } from "react-icons/im";
 
 const Home = () => {
+  const skills = [
+    "JavaScript",
+    "Typescript",
+    "HTML",
+    "CSS",
+    "Express.js",
+    "MongoDB",
+    "Node.js",
+    "styled-components",
+    "linux",
+    "React",
+  ];
   return (
-    <IconContext.Provider value={{ size: "16px" }}>
+    <IconContext.Provider value={{ size: "16px", color: "black" }}>
       <Wrapper id="about">
+        <Hero />
         <Head>
-          <Image
-            src="./assets/black-and-white-headshot.jpg"
-            alt="picture of me"
-          />
-          <Name>Dillon McQuade</Name>
-          <Title>Full Stack Developer</Title>
-          <div>
-            <Location /> Montreal, QC
-          </div>
-          <About>
-            I'm a Full Stack Developer, life-long learner, ex back-country
-            caretaker in the mountains of Vermont, husband, and lawn nerd. I'm
-            intrigued by software and especially developer tools and
-            command-line applications.
-          </About>
+          <Avatar>
+            <Image
+              src="./assets/black-and-white-headshot.jpg"
+              alt="picture of me"
+            />
+          </Avatar>
+          <AboutContainer>
+            <div>
+              <Name>Dillon McQuade</Name>
+              <Typewriter
+                component={Title}
+                options={{
+                  strings: [
+                    "Full Stack Developer",
+                    "Adventurer",
+                    "Life-long learner",
+                    "Husband",
+                    "Lawn nerd",
+                  ],
+                  loop: true,
+                  autoStart: true,
+                  skipAddStyles: true,
+                }}
+              />
+              <ImLocation style={{ color: "var(--nord14)" }} /> Montreal, QC
+            </div>
 
-          <About>
-            My interests in software are vast and I'm determined to continue to
-            broaden my horizons in this field. I'm currently looking for a new
-            role to apply the knowledge I've gained and expand my skill-set.
-          </About>
+            <Title>About me</Title>
+            <About>
+              I'm a Full Stack Developer, life-long learner, adventurer,
+              husband, and lawn nerd. I'm intrigued by software and especially
+              developer tools and command-line applications.
+            </About>
+            <About>
+              My interests in software are vast and I'm determined to continue
+              to broaden my horizons in this field. I'm currently looking for a
+              new role to apply the knowledge I've gained and expand my
+              skill-set.
+            </About>
+          </AboutContainer>
         </Head>
         <span id="projects" />
         <Rule />
@@ -39,6 +72,13 @@ const Home = () => {
             <ProjectCard key={project.id} data={project} id={project.id} />
           ))}
         </Projects>
+        <Rule />
+        <Name>Skills</Name>
+        <Skills>
+          {skills.map((skill) => (
+            <Skill>{skill}</Skill>
+          ))}
+        </Skills>
       </Wrapper>
     </IconContext.Provider>
   );
@@ -48,8 +88,6 @@ export default Home;
 
 const Wrapper = styled.article`
   display: flex;
-  position: relative;
-  top: 56px;
   width: 95vw;
   margin: 1rem auto 0 auto;
   font-size: 0.8rem;
@@ -61,21 +99,28 @@ const Wrapper = styled.article`
 `;
 const Head = styled.div`
   display: flex;
-  flex-direction: column;
-  background-color: var(--nord3);
-  border-radius: 1em;
   width: 100%;
+  flex-direction: column;
   align-items: center;
+  justify-content: space-evenly;
+  color: var(--nord4);
+  background-color: rgba(0, 0, 0, 0.4);
+  @media (min-width: 500px) {
+    flex-direction: row;
+    min-height: 40vh;
+  }
 `;
 const Name = styled.h1`
   font-size: 2em;
   color: var(--nord7);
   margin-top: 20px;
+  letter-spacing: 0.05em;
 `;
 const Title = styled.h2`
   font-size: 1.5em;
   color: var(--nord8);
   margin-bottom: 20px;
+  letter-spacing: 0.05em;
 `;
 
 const Projects = styled.div`
@@ -87,13 +132,17 @@ const Projects = styled.div`
   flex-wrap: wrap;
 `;
 const About = styled.p`
-  font-size: 1.1rem;
+  text-align: left;
+  font-size: 0.8rem;
   width: 100%;
-  padding: 1em 1em;
-  text-align: justify;
+  padding: 0.5em 1em;
+  line-height: 1.25em;
+  letter-spacing: 0.03em;
   text-indent: 1rem;
+  padding: 1rem;
   @media (min-width: 1000px) {
     max-width: 1000px;
+    font-size: 1.1rem;
   }
 `;
 const Rule = styled.hr`
@@ -103,11 +152,56 @@ const Rule = styled.hr`
 `;
 
 const Image = styled.img`
-  height: 100px;
-  border: 2px solid var(--nord8);
-  border-radius: 50%;
+  height: 150px;
   margin: 1rem 0;
+  border-radius: 0.2em;
+  @media (min-width: 550px) {
+    height: 300px;
+  }
 `;
-const Location = styled(ImLocation)`
-  color: var(--nord14);
+
+const Hero = styled.div`
+  width: 100vw;
+  height: 100vh;
+  background: linear-gradient(
+      0deg,
+      rgba(0, 0, 0, 0) 141px,
+      rgba(0, 0, 0, 0) 100%
+    ),
+    url("./assets/banner.jpg");
+  background-size: cover;
+  background-position: center;
+  position: absolute;
+  top: -100px;
+  z-index: -1;
+  @media (min-width: 500px) {
+    height: 80vh;
+  }
+`;
+
+const Avatar = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`;
+const AboutContainer = styled.div`
+  text-align: center;
+  max-width: 100%;
+  @media (min-width: 500px) {
+    max-width: 30%;
+  }
+`;
+const Skills = styled.div`
+  display: grid;
+  margin: 0 auto;
+  width: 100%;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: auto;
+`;
+
+const Skill = styled.p`
+  font-size: 1.5em;
+  margin-top: 20px;
+  letter-spacing: 0.05em;
+  text-align: center;
 `;

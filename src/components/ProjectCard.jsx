@@ -16,7 +16,7 @@ const ProjectCard = ({
         <Name>{name}</Name>
       </TitleAndIcons>
       <hr />
-      <p>{description}</p>
+      <Description>{description}</Description>
       <Icons>
         <a href={github} alt="github link" rel="noreferrer" target="_blank">
           <BsGithub size="24px" style={{ margin: "0 .5rem" }} />
@@ -34,15 +34,16 @@ const ProjectCard = ({
 export default ProjectCard;
 
 const Wrapper = styled.section`
-  background-color: var(--nord3);
-  border-radius: 1em;
+  border-radius: 0.2em;
   width: 100%;
   margin: 1rem 0;
   padding: 1em;
   font-size: 0.8rem;
+  background-color: white;
   cursor: pointer;
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 12px 28px 0px, rgba(0, 0, 0, 0.1) 0px 2px 4px 0px, rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;r;
   &:hover {
-    opacity: 0.9;
+    background-color: #faf5e8;
   }
   @media (min-width: 625px) {
     max-width: 350px;
@@ -50,14 +51,21 @@ const Wrapper = styled.section`
   }
 `;
 
+const Description = styled.p`
+  letter-spacing: 0.05em;
+  line-height: 1.25rem;
+`;
+
 const TitleAndIcons = styled.div`
   display: flex;
   flex-direction: column;
+  font-weight: bold;
 `;
 
 const Icons = styled.div`
   margin: 1rem 0 0 0;
   align-self: flex-end;
+  color: black;
 `;
 
 const Name = styled.div`

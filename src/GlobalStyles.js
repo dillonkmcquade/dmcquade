@@ -19,7 +19,7 @@ export default createGlobalStyle`
       --nord13: #ebcb8b;
       --nord14: #a3be8c;
       --nord15: #b48ead;
-      --font-family: 'Roboto Mono', monospace;
+      --font-family: futura-pt,"system-ui",Helvetica Neue,"sans-serif";
     }
 
 
@@ -42,11 +42,10 @@ export default createGlobalStyle`
         font-size: 100%;
         vertical-align: baseline;
         box-sizing: border-box;
-        color: var(--nord4);
         font-family: var(--font-family);
+
     }
     html, body, #root {
-      background-color: var(--nord0);
       min-height: calc( 100vh - 56px );
 }
 `;
