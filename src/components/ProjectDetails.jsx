@@ -51,6 +51,7 @@ const SectionTitle = styled.h1`
   font-size: 1.8rem;
   max-width: 100%;
   text-align: center;
+  margin: 1rem 0;
   @media (min-width: 600px) {
     max-width: 75%;
   }
@@ -62,7 +63,7 @@ const SectionText = styled.p`
   line-height: 1.5em;
   @media (min-width: 600px) {
     width: 100%;
-    padding: 2rem;
+    margin: 1em 0;
   }
 `;
 const Flex = styled.div`

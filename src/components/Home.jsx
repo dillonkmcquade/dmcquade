@@ -120,7 +120,7 @@ const Name = styled.h1`
 const Title = styled.h2`
   font-size: 1.5em;
   color: var(--nord8);
-  margin-bottom: 20px;
+  margin: 20px 0;
   letter-spacing: 0.05em;
 `;
 
@@ -164,13 +164,8 @@ const Image = styled.img`
 
 const Hero = styled.div`
   width: 100vw;
-  height: 100vh;
-  background: linear-gradient(
-      0deg,
-      rgba(0, 0, 0, 0) 141px,
-      rgba(0, 0, 0, 0) 100%
-    ),
-    url("./assets/banner.jpg");
+  height: calc(100vh + 100px);
+  background: url("./assets/banner.jpg");
   background-size: cover;
   background-position: center;
   position: absolute;
