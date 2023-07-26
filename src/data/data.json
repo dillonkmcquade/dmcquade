@@ -10,6 +10,13 @@
   },
   {
     "id": 1,
+    "name": "Wearables",
+    "github": "https://www.github.com/dillonkmcquade/wearables",
+    "description": "An full stack e-commerce website written in JavaScript, React, Express, and MongoDB. Completed in a group with 4 other contributors.",
+    "src": "./assets/wearables_home.png"
+  },
+  {
+    "id": 2,
     "name": "Asteroid Blaster",
     "github": "https://www.github.com/dillonkmcquade/asteroid_blaster",
     "description": "A cross between tetris and asteroids, written in object oriented JavaScript",
