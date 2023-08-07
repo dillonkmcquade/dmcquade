@@ -5,7 +5,7 @@
     "sections": [
       {
         "title": "Project goal",
-        "text": "The goal of this project was to implement as many features as possible that one could find in a personal investing platform.\n I wanted to make sure that at the minimum, users could buy and sell stocks, track their portfolio, and ensure that prices were dynamic.\n Using real market data made this last part easy and quickly allowed me to implement some simple algorithms that would calculate portfolio value based on the purchase price and the current price at any time.",
+        "text": "The goal of this project was to create a personal investing platform.\n I wanted to make sure that at the minimum, users could buy and sell stocks, track their portfolio, and ensure that prices were dynamic.\n Using real market data made this last part easy and quickly allowed me to implement some simple algorithms that would calculate portfolio value based on the purchase price and the current price at any time.",
         "image": "./assets/stockDetails.png"
       },
       {
@@ -15,7 +15,7 @@
       },
       {
         "title": "Managing the data",
-        "text": "Being rate limited by an API can make front-end data management a bit difficult, therefore I took some extra measures to reduce the need for refetching quotes all the time.\n I chose to use browser storage to store quotes and added a timestamp property to the json object. Knowing the timestamp of the data, I could refetch fresh data if it became stale after 5 minutes.\n Calculating total value involved knowing the current price of every stock in your portfolio, and this could get costly the larger the portfolio grows.\n Having the ability to store prices locally greatly reduced the number of fetch calls to finnhub.",
+        "text": "It can be difficult to always display up-to-date data when that data comes from an external API, therefore I took some extra measures to reduce the need for refetching quotes all the time.\n I chose to use Redis to cache quotes, candle-stick graph data, search results, and news data. I was able to set expiration times on these objects in order to keep data from becoming stale(60s for quotes, 3m for candles).\n Calculating total value involved knowing the current price of every stock in your portfolio, and this could get costly the larger the portfolio grows.\n Having the ability to store prices locally greatly reduced the number of fetch calls to finnhub.",
         "image": "./assets/dashboard.png"
       }
     ]
