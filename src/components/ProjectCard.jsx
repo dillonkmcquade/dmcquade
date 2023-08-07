@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 const ProjectCard = ({
-  data: { github, name, src, description, youtube, url },
+  data: { noInfo, github, name, src, description, youtube, url },
   id,
 }) => {
   return (
@@ -38,7 +38,9 @@ const ProjectCard = ({
               </a>
             )}
           </div>
-          <LearnMore to={`/project/${id}`}>Learn more</LearnMore>
+          {noInfo ? null : (
+            <LearnMore to={`/project/${id}`}>Learn more</LearnMore>
+          )}
         </Icons>
       </Content>
     </Wrapper>
