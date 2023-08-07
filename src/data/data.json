@@ -12,7 +12,7 @@
     "id": 1,
     "name": "MarketSim V2",
     "github": "https://www.github.com/dillonkmcquade/sm_sim-v2",
-    "description": "Fork of MarketSim, rewritten with PostgreSQL. Backend containerized with docker.",
+    "description": "Fork of MarketSim, rewritten with PostgreSQL, containerized with Docker",
     "src": "./assets/stockDetails.png",
     "noInfo": true
   },
