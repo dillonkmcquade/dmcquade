@@ -36,7 +36,7 @@
       },
       {
         "title": "Techniques learned",
-        "text": "In order to have shopping carts, we had to have user accounts. In order to enable login, we had to authorize users using our database.\n We encrypted user passwords using Bcrpyt and kept authorization as a separate database collection to reduce the risk of revealing client secrets.",
+        "text": "In order to have shopping carts, we had to have user accounts. In order to enable login, we had to authenticate users using our database.\n We encrypted user passwords using Bcrpyt and handled authorization with JWT tokens and a Redis cache.",
         "image": "./assets/wearables_cart.png"
       }
     ]
