@@ -24,7 +24,13 @@ const ProjectCard = ({
         <Description>{description}</Description>
         <Icons>
           <div>
-            <a href={github} alt="github link" rel="noreferrer" target="_blank">
+            <a
+              href={github}
+              aria-label="Click to see the github repository"
+              alt="github link"
+              rel="noreferrer"
+              target="_blank"
+            >
               <BsGithub size="24px" style={{ margin: "0 .5rem" }} />
             </a>
             {youtube && (
@@ -34,7 +40,11 @@ const ProjectCard = ({
                 rel="noreferrer"
                 target="_blank"
               >
-                <BsYoutube size="24px" style={{ margin: "0 .5rem" }} />
+                <BsYoutube
+                  size="24px"
+                  style={{ margin: "0 .5rem" }}
+                  aria-label="Click to see me present the project on YouTube"
+                />
               </a>
             )}
           </div>
