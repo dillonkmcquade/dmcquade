@@ -1,5 +1,7 @@
+import styled from "styled-components";
 import { AiFillMail } from "react-icons/ai";
 import { BsGithub, BsLinkedin } from "react-icons/bs";
+
 const LinkedIn = styled(BsLinkedin)`
   scale: 2;
   margin: 0 1em;
