@@ -39,7 +39,7 @@ const ProjectCard = ({
             )}
           </div>
           {noInfo ? null : (
-            <LearnMore to={`/project/${id}`}>Learn more</LearnMore>
+            <LearnMore to={`/project/${id}`}>Project Details</LearnMore>
           )}
         </Icons>
       </Content>
