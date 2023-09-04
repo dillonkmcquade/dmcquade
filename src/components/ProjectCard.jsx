@@ -49,7 +49,12 @@ const ProjectCard = ({
             )}
           </div>
           {noInfo ? null : (
-            <LearnMore to={`/project/${id}`}>Project Details</LearnMore>
+            <LearnMore
+              aria-label="Click to see project details"
+              to={`/project/${id}`}
+            >
+              Project Details
+            </LearnMore>
           )}
         </Icons>
       </Content>
